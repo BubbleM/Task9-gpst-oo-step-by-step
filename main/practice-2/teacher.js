@@ -7,20 +7,23 @@ function Teacher(name, age, clazzes) {
 }
 
 Teacher.prototype = new Person();
+
+function formatClass(classes) {
+  let result = [];
+  classes.forEach(item => {
+    result.push(item.number);
+  });
+
+  return result.join(',');
+}
+
 Teacher.prototype = {
   baseIntroduce: Teacher.prototype.introduce,
   introduce: function() {
-    let classes = 'I teach Class ';
-    if (this.clazzes.length !== 0) {
-      this.clazzes.forEach(item => {
-        classes += item.number + ',';
-      })
-      classes = classes.substr(0, classes.length - 1);
-    } else {
-      classes = 'I teach No Class';
-    }
+    if (this.clazzes.length !== 0)
+      return `${this.baseIntroduce()} I am a Teacher. I teach Class ${formatClass(this.clazzes)}.`
 
-    return `${this.baseIntroduce()} I am a Teacher. ${classes}.`;
+    return `${this.baseIntroduce()} I am a Teacher. I teach No Class.`
   }
 }
 

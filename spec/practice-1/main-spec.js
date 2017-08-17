@@ -23,14 +23,13 @@ describe("Person", () => {
       let student = new Student("Tom", 21, 2);
       expect(student.name).toBe("Tom");
       expect(student.age).toBe(21);
-      expect(student.klass).toBe(2);
+      expect(student.clazz).toBe(2);
 
     });
 
     it("should overwrite Person introduce, introduce student with class", () => {
       let student = new Student("Tom", 21, 2);
       let introduce = student.introduce();
-
       expect(introduce).toBe("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
 
     });

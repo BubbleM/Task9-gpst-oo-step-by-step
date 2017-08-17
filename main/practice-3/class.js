@@ -9,7 +9,7 @@ Class.prototype = {
   assignLeader: function (student) {
     this.leader = student;
     this.teacher.forEach(item => {
-      item.notifyLeaderAssigned += `I know ${student.name} become Leader of Class ${student.clazz.number}.`;
+      item.notifyLeaderAssigned = `${student.name} become Leader of Class ${student.clazz.number}`;
     });
     if (this.member.includes(student) > 0) {
       return 'Assign team leader successfully.';
@@ -21,7 +21,7 @@ Class.prototype = {
   appendMember: function (student) {
     this.member.push(student);
     this.teacher.forEach(item => {
-      item.notifyStudentAppended += `I know ${student.name} has joined Class ${student.clazz.number}.`;
+      item.notifyStudentAppended = `${student.name} has joined Class ${student.clazz.number}`;
     });
   },
 

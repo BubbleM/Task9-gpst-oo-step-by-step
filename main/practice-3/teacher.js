@@ -38,9 +38,9 @@ Teacher.prototype = {
     return result;
   },
 
-  notifyStudentAppended: 'I am Tom. ',
-  notifyLeaderAssigned: 'I am Tom. '
-}
+  notifyStudentAppended: '',
+  notifyLeaderAssigned: ''
 
+}
 
 module.exports = Teacher;

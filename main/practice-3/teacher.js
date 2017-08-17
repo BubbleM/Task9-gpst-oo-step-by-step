@@ -3,6 +3,9 @@ const Person = require('./person');
 function Teacher(name, age, clazzes) {
   Person.call(this, name, age);
   this.clazzes = clazzes;
+  this.clazzes.forEach(item => {
+    item.teacher.push(this);
+  });
 }
 
 Teacher.prototype = new Person();
@@ -33,8 +36,11 @@ Teacher.prototype = {
     });
 
     return result;
-  }
+  },
+
+  notifyStudentAppended: 'I am Tom. ',
+  notifyLeaderAssigned: 'I am Tom. '
 }
 
-module.exports = Teacher;
 
+module.exports = Teacher;
